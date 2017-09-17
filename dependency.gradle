@@ -15,6 +15,7 @@ ext.versions = [
         paperwork: '1.2.7',
         butterknife: '8.5.1',
         constraintLayout: '1.0.2',
+        retrofit: '2.1.0',
 
         // Testing / debug
         jUnit: '4.12',
@@ -39,6 +40,9 @@ ext.library = [
         butterknife: "com.jakewharton:butterknife:$versions.butterknife",
         butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
         constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
+        retrofit         : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+        retrofitConverter: "com.squareup.retrofit2:converter-gson:$versions.retrofit",
+        retrofitAdapter  : "com.squareup.retrofit2:adapter-rxjava:$versions.retrofit",
 
         // Testing / debug
         jUnit: "junit:junit:$versions.jUnit",
