@@ -1,0 +1,44 @@
+ext.versions = [
+        // Android libs
+        androidMinSdk: 19,
+        androidTargetSdk: 26,
+        androidCompileSdk: 26,
+        androidBuildTools: "26.0.1",
+        androidSupportLibrary: '25.2.0',
+
+        // App dependencies
+        dagger: '2.7',
+        rxJava: '2.0.1',
+        rxAndroid: '2.0.1',
+        rxLint: '1.2',
+        timber: '4.5.1',
+        butterknife: '8.5.1',
+        paperwork: '1.2.7',
+
+        // Testing / debug
+        jUnit: '4.12',
+        espresso: '2.2.2',
+        mockito: '2.2.22'
+]
+
+ext.library = [
+        // Android dependencies
+        androidSupportAppCompat: "com.android.support:appcompat-v7:$versions.androidSupportLibrary",
+
+        // App dependencies
+        dagger: "com.google.dagger:dagger:$versions.dagger",
+        daggerCompiler: "com.google.dagger:dagger-compiler:$versions.dagger",
+        rxJava: "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+        rxAndroid: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+        rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
+        timber: "com.jakewharton.timber:timber:$versions.timber",
+        butterknife: "com.jakewharton:butterknife:$versions.butterknife",
+        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
+        paperwork: "hu.supercluster:paperwork:$versions.paperwork",
+
+        // Testing / debug
+        jUnit: "junit:junit:$versions.jUnit",
+        espressoCore: "com.android.support.test.espresso:espresso-core:$versions.espresso",
+        espressoContrib: "com.android.support.test.espresso:espresso-contrib:$versions.espresso",
+        mockito: "org.mockito:mockito-core:$versions.mockito"
+]

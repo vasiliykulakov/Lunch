@@ -1,0 +1,94 @@
+apply plugin: 'com.android.application'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'net.ltgt.errorprone'
+apply plugin: 'findbugs'
+apply plugin: 'hu.supercluster.paperwork'
+apply plugin: 'com.github.ben-manes.versions'
+
+apply from: '../config/findbugs.gradle'
+apply from: '../config/pmd.gradle'
+apply from: '../config/jacoco.gradle'
+apply from: '../config/checkstyle.gradle'
+
+android {
+    compileSdkVersion versions.androidCompileSdk
+    buildToolsVersion versions.androidBuildTools
+    defaultConfig {
+        applicationId "com.noteworth.lunch"
+        minSdkVersion versions.androidMinSdk
+        targetSdkVersion versions.androidTargetSdk
+        versionCode 1
+        versionName "1.0"
+      //  testInstrumentationRunner "com.ustwo.boilerplate.application.ApplicationTestRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+        }
+        release {
+            storeFile file("../release.keystore")
+            storePassword System.getenv("RELEASE_KEYSTORE_PASSWORD")
+            keyAlias System.getenv("RELEASE_KEY_ALIAS")
+            keyPassword System.getenv("RELEASE_KEY_PASSWORD")
+        }
+    }
+
+    buildTypes {
+        debug {
+            versionNameSuffix " Debug"
+            applicationIdSuffix ".debug"
+
+            testCoverageEnabled true
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile library.androidSupportAppCompat
+
+    compile library.dagger
+    annotationProcessor library.daggerCompiler
+
+    compile library.timber
+
+    compile library.butterknife
+    annotationProcessor library.butterknifeCompiler
+
+    compile library.rxJava
+    compile library.rxAndroid
+    compile library.rxLint
+
+    testCompile library.jUnit
+
+    androidTestCompile(library.espressoCore) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestAnnotationProcessor library.daggerCompiler
+}
+
+dexcount {
+    format = "list"
+    includeClasses = false
+    includeFieldCount = true
+    includeTotalMethodCount = true
+    orderByMethodCount = false
+    verbose = false
+    maxTreeDepth = Integer.MAX_VALUE
+    runOnEachAssemble = false
+}
