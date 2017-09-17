@@ -61,8 +61,15 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile library.androidSupportAppCompat
 
+    compile library.constraintLayout
+
+    compile library.recyclerView
+
     compile library.dagger
     annotationProcessor library.daggerCompiler
+
+    compile library.butterknife
+    annotationProcessor library.butterknifeCompiler
 
     compile library.timber
     compile library.stetho

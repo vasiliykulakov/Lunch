@@ -1,6 +1,7 @@
 package com.noteworth.lunch.application;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.facebook.stetho.Stetho;
 import com.noteworth.lunch.BuildConfig;
@@ -16,6 +17,10 @@ public class LunchApplication extends Application {
         super.onCreate();
         Stetho.initializeWithDefaults(this);
         setupTimber();
+    }
+
+    public static LunchApplication get(Context context) {
+        return (LunchApplication)context.getApplicationContext();
     }
 
     protected ApplicationComponent createComponent() {

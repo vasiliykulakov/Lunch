@@ -13,6 +13,8 @@ ext.versions = [
         rxLint: '1.2',
         timber: '4.5.1',
         paperwork: '1.2.7',
+        butterknife: '8.5.1',
+        constraintLayout: '1.0.2',
 
         // Testing / debug
         jUnit: '4.12',
@@ -24,6 +26,7 @@ ext.versions = [
 ext.library = [
         // Android dependencies
         androidSupportAppCompat: "com.android.support:appcompat-v7:$versions.androidSupportLibrary",
+        recyclerView: "com.android.support:recyclerview-v7:$versions.androidSupportLibrary",
 
         // App dependencies
         dagger: "com.google.dagger:dagger:$versions.dagger",
@@ -33,6 +36,9 @@ ext.library = [
         rxLint: "nl.littlerobots.rxlint:rxlint:$versions.rxLint",
         timber: "com.jakewharton.timber:timber:$versions.timber",
         paperwork: "hu.supercluster:paperwork:$versions.paperwork",
+        butterknife: "com.jakewharton:butterknife:$versions.butterknife",
+        butterknifeCompiler: "com.jakewharton:butterknife-compiler:$versions.butterknife",
+        constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
 
         // Testing / debug
         jUnit: "junit:junit:$versions.jUnit",
