@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="grid_1">10dp</dimen>
+    <dimen name="grid_2">15dp</dimen>
+    <dimen name="grid_3">20dp</dimen>
+    <dimen name="grid_4">30dp</dimen>
+    <dimen name="grid_5">40dp</dimen>
+    <dimen name="list_image_size">80dp</dimen>
+</resources>
