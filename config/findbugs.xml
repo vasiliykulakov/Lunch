@@ -28,12 +28,5 @@
         <Class name="~.*\$\$Lambda\$.*"/>
     </Match>
 
-    <!-- Ignore Butterknife auto-generated classes -->
-    <Match>
-        <Class name="~.*\$\$ViewBinder*"/>
-    </Match>
-    <Match>
-        <Class name="~.*\$\$ViewBinder\$InnerUnbinder*"/>
-    </Match>
 
 </FindBugsFilter>
