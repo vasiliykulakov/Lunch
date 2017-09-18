@@ -42,7 +42,9 @@ Frameworks used:
 ## Status
 I did not build the details views yet, but a selected item can be observed and the view details API is in. Maybe at some point :)
 
-There is only one test which tests the autocomplete flow. I wanted to understand how testing changed with RxJava2.
+There are no UI/Espresso tests yet.
+
+There is only one unit test which tests the autocomplete flow. I wanted to understand how testing changed with RxJava2.
 
 Data binding framework wasn't used, got away with Butterknife for now. If I had built out the various Adapters properly instead of using simple ones, DB would be extremely beneficial and concise.
 
