@@ -50,6 +50,8 @@ Data binding framework wasn't used, got away with Butterknife for now. If I had 
 
 Error handling pretty much just shows a toast and logs via Timber. A conditional retry or emitting default values on error would be a good next step.
 
+Because views are reactive now, and there's a certain amount of logic taking place in them, I would decouple the MVP views from Android entirely. This would 1. allow injecting the views and 2. allow unit-testing some view logic, resulting in better overall coverage. This can be done by creating a POJO view base, and some kind of a "view host" interface to be implemented by Android hosts.
+
 Since there's just really one screen (i.e. all elements are always visible), dependency scopes don't play a big role, but expanding the applications to other screens would require more careful scoping. Only the results dependencies have a scope (`results.di.ResultsScope`).
 
 The client configuration is all in the app (e.g. not remote, and not obfuscated), but design allows for extending it.
