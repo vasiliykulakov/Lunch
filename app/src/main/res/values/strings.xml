@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lunch</string>
+    <string name="search">Search</string>
+    <string name="no_search_results">No search results</string>
+    <string name="hint_food">Food</string>
+    <string name="hint_location">Location</string>
+</resources>
