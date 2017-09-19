@@ -20,10 +20,20 @@ android {
         targetSdkVersion versions.androidTargetSdk
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "us.kulakov.lunch.TestRunner"
     }
 
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force resolutions.okio
+            force resolutions.annotations
+            force resolutions.okHttp3
+        }
     }
 
     compileOptions {
@@ -94,6 +104,8 @@ dependencies {
 
     testCompile library.jUnit
     testCompile library.mockito
+    testCompile library.restmock
+    androidTestCompile library.restmock
 
     androidTestCompile(library.espressoCore) {
         exclude group: 'com.android.support', module: 'support-annotations'
