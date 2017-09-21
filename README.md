@@ -11,7 +11,7 @@ Find a decent place to eat lunch!
 Enter a food and a location (autocompleted) into a text box, select the sort order, and click Search to find places in the area. The place search and location autocomplete is done via Google Maps APIs.
 
 ## Architecture Overview
-I wanted to try to be as reactive as possible in this project, but likely to a fault. Still, some areas could benefit from being more reactive, while in others it seems cumbersome. 
+I wanted to try to be as reactive as possible in this project, but likely to a fault. Still, some areas could benefit from being more reactive, while in others it seems cumbersome. This was my first time using RxJava2.
 
 Presenters (via `@Inject`-constructors) and are injected into fragments/views.
 
