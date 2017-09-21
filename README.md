@@ -4,9 +4,9 @@
 
 
 ## Description
-Find a decent place to eat lunch. 
+This is a 1-day project for exploring a more Rx-driven MVP architecture.
 
-This is an experimental project for for exploring a more Rx-driven MVP architecture.
+Find a decent place to eat lunch! 
 
 Enter a food and a location (autocompleted) into a text box, select the sort order, and click Search to find places in the area. The place search and location autocomplete is done via Google Maps APIs.
 
@@ -37,14 +37,15 @@ Frameworks used:
 * Reactive views and presenters via RxJava2 with RxAndroid and RxBinding
 * Layout injection via Butterknife
 * Test mocks via Mockito
+* UI test interactions via Espresso
 
 
 ## Status
 I did not build the details views yet, but a selected item can be observed and the view details API is in. Maybe at some point :)
 
-There are no UI/Espresso tests yet.
+There is only one unit tested class. I wanted to understand how testing changed with RxJava2.
 
-There is only one unit test which tests the autocomplete flow. I wanted to understand how testing changed with RxJava2.
+Because the UI is rudimentary now, there is only one Espresso UI test. I put it in to have boilerplate in place. The boilerplate sets up the page object pattern of testing.
 
 Data binding framework wasn't used, got away with Butterknife for now. If I had built out the various Adapters properly instead of using simple ones, DB would be extremely beneficial and concise.
 
